@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MUTLU YILLAR</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    body{
+      overflow:hidden;
+      background: radial-gradient(circle at 50% 30%, #0b1a4a 0%, #050717 60%, #03030b 100%);
+      color: #fff;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+
+    canvas{
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      display: block;
+      z-index: 0;
+    }
+
+    .title, .subtitle, #countdown{
+      position: fixed;
+      left: 0; right: 0;
+      text-align: center;
+      z-index: 2;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .title{
+      top: 22px;
+      font-size: clamp(28px, 4vw, 54px);
+      letter-spacing: 1px;
+    }
+    .subtitle{
+      top: 90px;
+      opacity: .85;
+      font-size: 18px;
+    }
+
+    #countdown{
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: clamp(80px, 18vw, 180px);
+      font-weight: 800;
+      opacity: 0;
+      transform: scale(0.96);
+      transition: opacity .35s ease, transform .35s ease;
+      text-shadow: 0 0 18px rgba(255,255,255,0.35);
+    }
+    #countdown.show{
+      opacity: 1;
+      transform: scale(1);
+    }
+  </style>
+</head>
+<body>
+  <div class="title">MUTLU YILLAR ✨</div>
+  <div class="subtitle">For my family ⭐🎄</div>
+
+  <div id="countdown">3</div>
+  <canvas id="c"></canvas>
+
+  <!-- DİKKAT: script sadece 1 kere -->
+  <script src="script.js"></script>
+</body>
+</html>
+
